@@ -1,0 +1,31 @@
+
+
+how to install boto3 on centos7:
+
+
+    1. yum install epel-release -y
+    
+    2. yum install python-pip -y
+    
+    3. pip install boto
+    
+    4. pip install boto3
+    
+    5. pip list | grep boto  ( to see versions of boto and botocore )
+
+
+
+if you want to install specific boto3 version:
+
+
+    1. pip install boto3==<version>
+    
+    2. pip install boto3==1.18.13
+    
+    
+    
+To verify it is installed or not:
+
+    1. python -c "import boto3; print(boto3.__version__)"
+
+
