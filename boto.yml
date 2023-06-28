@@ -1,0 +1,28 @@
+creating ec2 instance using ansible playbook:
+
+    1. We are going to access aws cloud using IAM role
+    2. Using IAM role is more secure option
+    
+Prerequisites:
+
+    1. ansible needs to be installed and also boto needs to be installed on centos ec2 instance
+
+Install boto framework - AWS SDK: 
+
+    1.command : sudo pip install boto boto3
+    ansible will access AWS resources using boto SDK
+    if you want to access AWS services using python so you should use boto framework because ansible written in python language.
+    
+    2.command: sudo yum install python-boto -y
+    
+    3.command: pip list | grep boto
+    
+    If boto is installed on your system, the output of the command will show the package name, version, and other information. 
+    
+    For example:   boto3               1.18.17
+                   botocore            1.21.17
+    
+    : Note that pip is the package installer for Python and pip list shows a list of packages installed on your system via pip. The grep command is used to filter the output of pip list and only show lines that contain the string "boto".
+    
+    
+    2. Make sure you create an IAM role with AmazonEc2 full access policy and attach the role to ec2 instance
