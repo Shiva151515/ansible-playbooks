@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  
+  - name: copying the file from src to dest
+    copy:
+	  src: /etc/ansible/yarn.yml
+	  dest: /home/centos
+      owner: root
+      mode: '0644'
