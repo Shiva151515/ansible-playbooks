@@ -1,0 +1,47 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: False
+  
+
+  vars:
+    region: us-east-1
+    instance_type: t2.nano
+    ami: ami-002070d43b0a4f171  # Centos
+    keypair: centos7 # pem file name
+
+   
+   tasks: 
+   
+     -  name: create ec2 instance
+        ec2:
+          key_name: "{{ keypair }}" 
+          group: My-SG            # security group name
+          instance_type: "{{ instance_type }}"
+          image: "{{ ami }}"
+          wait: true
+          region: "{{ region }}"
+          aws_zone: us-east-1a
+          count: 1 #default
+          
+          
+          count_tag:
+            Name: Tableau Server primary
+          instance_tags:
+            Name: Tableau Server primary
+          count_tag:
+            Name: Tableau Server worker1
+          instance_tags:
+            Name: Tableau Server worker1
+          count_tag:
+            Name: Tableau Server worker1
+          instance_tags:
+            Name: Tableau Server worker2
+            
+          vpc_subnet_id: subnet-0da4e9540af059a5f
+          assign_public_ip: yes 
+          
+          
+
+  
+ 

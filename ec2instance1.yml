@@ -1,0 +1,64 @@
+---
+- name: Create an EC2 instance
+  hosts: localhost
+  gather_facts: no
+  vars:
+    region: us-east-1
+    instance_type: t2.micro
+    ami_id: ami-002070d43b0a4f171
+    keypair_name: centos7
+    security_group: My-SG
+    subnet_id: subnet-0da4e9540af059a5f
+  tasks:
+  - name: Create EC2 instance
+    ec2:
+      region: "{{ region }}"
+      instance_type: "{{ instance_type }}"
+      image: "{{ ami_id }}"
+      key_name: "{{ keypair_name }}"
+      group: "{{ security_group }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      assign_public_ip: yes
+      count: 1
+      wait: yes
+      instance_tags:
+        Name: my-instance
+    register: ec2
+  - name: Print instance details
+    debug:
+      var: ec2
+
+
+
+    
+    
+    
+    pip install boto3==1.17.70
+    
+    pip show boto3
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
