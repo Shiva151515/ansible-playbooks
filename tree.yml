@@ -1,0 +1,32 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Install tree package
+      yum:
+        name: tree
+        state: present
+        
+        
+    
+    
+    The tree command is a Linux/Unix utility that displays the contents of a directory in a tree-like hierarchical format, showing the relationship between directories and their subdirectories.
+   
+        
+    How to check tree is installed or not
+    
+      command : rpm -q tree
+
+
+
+
+    Some common options for the tree command include:
+
+        -a: Shows hidden files and director lies
+        -d: Only shows directories, not files
+        -L: Specifies the maximum depth of the directory tree to display
+        -P: Specifies a pattern to match against the file or directory names to be displayed
+
+
+    Example : tree -L 2

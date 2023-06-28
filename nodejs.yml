@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: install the epel repository (if needed)
+    yum:
+      name: epel-release
+      state: present
+      
+  - name: install node.js
+    yum:
+      name: nodejs
+      state: present
+      
+  - name: install npm
+    yum:
+      name: npm
+      state: present
+      
+  - name: install the pm2 process manager
+    command: npm install -g pm2
+    
+    
+    
+    
+    
+    Verify that Node.js and NPM are installed on your local machine by running the following commands in your terminal:
+
+
+        1. node -v
+        2. npm -v

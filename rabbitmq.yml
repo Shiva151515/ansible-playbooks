@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Install the RabbitMQ package
+      yum:
+        name: rabbitmq-server
+        state: present
+
+    - name: Start and enable the RabbitMQ service
+      service:
+        name: rabbitmq-server
+        state: started
+        enabled: true
+
+
+
+
+
+RabbitMQ is a message broker that allows different software applications and services to communicate with each other by exchanging messages
+
+The main purpose of RabbitMQ server is to facilitate communication between distributed systems by routing messages from producers to consumers based on specific criteria.
+
+
+Some of the common use cases for RabbitMQ server include:
+
+    1.Microservices architecture: RabbitMQ can be used to coordinate communication between microservices in a distributed system. Each microservice can produce and consume messages from RabbitMQ, which acts as a message broker.
+    
+    2.Remote procedure calls: RabbitMQ can be used to implement remote procedure calls (RPCs) where a client can invoke a method on a remote server by sending a message to RabbitMQ.

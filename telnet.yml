@@ -1,0 +1,35 @@
+---
+- hosts: telnet_hosts
+  become: yes
+
+  tasks:
+    - name: Install Telnet
+      yum:
+        name: telnet
+        state: present
+
+
+
+
+
+
+
+   How to check telnetis installed or not
+   
+      command:     rpm -q telnet
+
+
+
+
+
+Telnet is a network protocol that enables a user to remotely access and interact with a device or computer system over the Internet or a local network. It uses a client-server model, where the user (the client) connects to a remote system (the server) using the Telnet protocol.
+
+The primary use of Telnet is for remote administration of servers, routers, switches, and other networking equipment. With Telnet, system administrators and network engineers can log in to a remote system and execute commands, configure settings, and perform maintenance tasks as if they were physically present at the remote location.
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+ ---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Add Yarn GPG key
+      rpm_key:
+        key: https://dl.yarnpkg.com/rpm/pubkey.gpg
+        state: present
+
+    - name: Add Yarn repository
+      yum_repository:
+        name: yarn
+        description: Yarn Repository
+        baseurl: https://dl.yarnpkg.com/rpm/
+        gpgcheck: yes
+        gpgkey: https://dl.yarnpkg.com/rpm/pubkey.gpg
+        enabled: yes
+
+    - name: Install Yarn
+      yum:
+        name: yarn
+        state: present
+
+
+
+
+
+
+     
+     
+   Yarn is a package manager for Node.js applications, created by Facebook.
+   
+   
+   1.Faster performance: Yarn uses a global cache to store packages, which makes installation and updates faster.
+
+   2.Consistent installations: Yarn uses a lockfile to ensure that installations are consistent across different machines and environments.
+
+   3.Offline mode: Yarn can work in offline mode, which allows developers to install packages without an internet connection.
+
+   4.Improved security: Yarn uses checksums to verify that packages have not been tampered with during installation.
+
+   5.Better error messages: Yarn provides more detailed error messages than npm, which can help developers troubleshoot issues more quickly.
+   
+   
+   
+   
+   By default, Yarn package manager stores its global packages in the following directory on CentOS:
+   
+   
+    /usr/local/share/.config/yarn/global
+
+
+   This directory contains the global packages installed using the Yarn package manager. When you install a package globally with Yarn, it is stored in this directory, which is added to the PATH environment variable.
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

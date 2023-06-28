@@ -1,0 +1,54 @@
+
+
+
+state: present, latest, installed,updated , absent , started, stopped, restarted, reloaded, in ansible
+
+
+
+
+
+
+In Ansible, the following are common states that can be applied to a resource:
+
+1.present: This state ensures that a resource exists in its desired state. For example, if you want to ensure that a package is installed on a server, 
+         you would use the present state.
+         
+
+2.latest: This state ensures that a resource is updated to the latest available version. For example, 
+        if you want to ensure that a package is always up-to-date, you would use the latest state.
+        
+
+3.installed: This state ensures that a package is installed on a server. This state is similar to present, but is specific to packages.
+
+
+4.updated: This state ensures that a package is updated to the latest available version. This state is similar to latest, but is specific to packages.
+
+
+5.absent: This state ensures that a resource does not exist on a server. For example, 
+          if you want to ensure that a package is not installed on a server, you would use the absent state.
+          
+
+6.started: This state ensures that a service is started on a server. For example, if you want to ensure that the Apache web server is running, 
+           you would use the started state.
+           
+
+7.stopped: This state ensures that a service is stopped on a server. For example, if you want to ensure that the Apache web server is stopped, 
+           you would use the stopped state.
+           
+
+8.restarted: This state ensures that a service is restarted on a server. For example, if you want to restart the Apache web server, 
+            you would use the restarted state.
+            
+
+9.reloaded: This state ensures that a service is reloaded on a server. For example, 
+            if you want to reload the configuration of the Apache web server without restarting it, you would use the reloaded state.
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
